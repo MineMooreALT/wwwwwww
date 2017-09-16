@@ -1,0 +1,160 @@
+<head>
+<script src="http://github.hubspot.com/odometer/odometer.js"></script>
+<style>
+
+.odometer {
+    font-size: 100px;
+}
+
+</style></head>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+      html,body{width:100%;height:100%;margin:0;padding:0;}
+      body {
+      	background: url(https://www.top-windows-tutorials.com/images/2010/01/win7-wall.jpg) no-repeat center;
+      	background-size:cover;
+      	height: 100%;
+      	width: 100%;
+      }
+
+#alert{
+    position:absolute;
+    top:30.5%;bottom:37.5%;left:25%;right:25%;
+    background-color:lightblue;
+    border:1px solid black;
+    border-radius:8px;
+    box-shadow: 0 0 16px black;
+    -webkit-transition: all .25s cubic-bezier(0.52, 0.76, 0.52, 0.76);
+    -moz-transition: all .25s cubic-bezier(0.52, 0.76, 0.52, 0.76);
+    -o-transition: all .25s cubic-bezier(0.52, 0.76, 0.52, 0.76);
+    -ms-transition: all .25s cubic-bezier(0.52, 0.76, 0.52, 0.76);
+    transition: all .25s cubic-bezier(0.52, 0.76, 0.52, 0.76);
+}
+#alert:before{
+    display:block;
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter:url(#blurLayer);
+    filter: blur(15px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='15');
+    opacity: .9;
+    content:' ';
+    background:lightblue  url(https://www.top-windows-tutorials.com/images/2010/01/win7-wall.jpg) no-repeat fixed center;
+   background-size:cover;
+}
+#alert>div{
+    position:absolute;
+    top:2em;bottom:.5em;left:.5em;right:.5em;
+    background-color:white;
+    border:1px solid gray;
+    padding:.5em;
+}
+#alert>div>h3{
+    margin:0;padding:0;position:absolute;
+    color:white;top:-1.5em;left:0;
+}
+
+#alert.close{
+    -webkit-transition: all .25s cubic-bezier(0.70, 0.50, 0.70, 0.50);
+    -moz-transition: all .25s cubic-bezier(0.70, 0.50, 0.70, 0.50);
+    -o-transition: all .25s cubic-bezier(0.70, 0.50, 0.70, 0.50);
+    -ms-transition: all .25s cubic-bezier(0.70, 0.50, 0.70, 0.50);
+    transition: all .25s cubic-bezier(0.70, 0.50, 0.70, 0.50);
+    opacity:0;
+    -webkit-transform:scale(0.95,0.9) translate(0, 0px);
+    -moz-transform:scale(0.95,0.9) translate(0, 0px);
+    -o-transform:scale(0.95,0.9) translate(0, 0px);
+    -ms-transform:scale(0.95,0.9) translate(0, 0px);
+    transform:scale(0.95,0.9) translate(0, 0px);
+}
+.btn-small {
+    height: 25px;
+    line-height: 26px;
+    padding: 0 01rem;
+}
+</style>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+      $(document).ready(function() {
+       function getJSON(url) {
+        var resp ;
+        var xmlHttp ;
+
+        resp  = '' ;
+        xmlHttp = new XMLHttpRequest();
+
+        if(xmlHttp != null)
+        {
+            xmlHttp.open( "GET", url, false );
+            xmlHttp.send( null );
+            resp = xmlHttp.responseText;
+        }
+
+        return resp ;
+    }
+    $("button").click(function() {
+var yeet ;
+var yeet = JSON.parse(getJSON('http://api-roblox-proxy.herokuapp.com/Marketplace/ProductInfo?assetId=' + $("#input").val()));
+var semi = yeet.Sales*yeet.PriceInRobux;
+var final = semi - semi * .30;
+$("#vall").html("Name: " + yeet.Name + "<br> Total Robux Revenue: <i class='material-icons' style='font-size: 16px;'>attach_money</i>" + final + "<br><br> Description: " + yeet.Description);    document.getElementById('alert').classList.toggle('close');
+
+    });
+  
+
+ });
+function yeet() {
+   document.getElementById('alert').classList.toggle('close');
+
+};
+ $("#16").click(function() {
+yeet();
+    }); 
+
+</script>
+    </head>
+<script>
+
+</script>
+    <body class="red">
+      <!--Import jQuery before materialize.js-->
+     
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+      
+     <div id="div"></div>
+<div class="row">
+        <div class="col s12">
+          Gamepass Id:
+          <div class="input-field inline">
+            <input id="input" type="email" >
+            <label for="tel"  >Id</label>
+          </div>
+        </div>
+        </div><button style="top: 3px; left: 3px;" class="btn  white-text black waves-effect waves-light">Find Profits</button>
+        <div id='alert' class='close'>
+         <button style="top: 2px; left: 530px;" class="btn  red darken-4 waves-effect waves-light btn-small" id="16" >X</button>
+
+    <div>
+
+        <div id="vall">
+            This is Aero Alert!
+        </div>
+    </div>
+</div>
+<svg:svg width="0" height="0">
+    <!-- Filter -->
+    <svg:filter id="blurLayer">
+         <!-- Blur and attributes -->
+         <svg:feGaussianBlur stdDeviation="15"/>
+    </svg:filter>
+</svg:svg>
